@@ -1,6 +1,20 @@
-<h1>New bookmark</h1>
-<%= simple_form_for [list, bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.submit %>
-<% end %>
+<div class="accordion col-12" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Add a new movie!
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse collapsed" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="card col-md-4">
+          <%= simple_form_for [list, bookmark] do |f| %>
+            <%= f.association :movie %>
+            <%= f.input :comment %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

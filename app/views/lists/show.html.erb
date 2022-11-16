@@ -1,13 +1,10 @@
 <h1>Details on <%= @list.name %></h1>
-  <ul>
-    <% @list.bookmarks.each do |bookmark| %>
-    <li> <%= bookmark.movie.title %>, <%= bookmark.comment %>
-        <%= link_to "Delete",
-          delete_bookmark_path(bookmark),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-    </li>
-    <% end %>
-  </ul>
+  <div class="row mb-3">
+    <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
+</div>
 
-  <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
+  <div class="d-grid gap-3">
+    <% @list.bookmarks.each_with_index do |bookmark, index| %>
+      <%= render 'components/card/card-movie', {bookmark: bookmark, index: index} %>
+    <% end %>
+  </div>
