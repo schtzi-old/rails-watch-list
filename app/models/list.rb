@@ -3,6 +3,7 @@ class List < ApplicationRecord
   MAX_FILE_SIZE = 10_000_000
 
   has_many :bookmarks, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :movies, through: :bookmarks
   has_one_attached :file, dependent: :destroy
 

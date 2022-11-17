@@ -1,9 +1,11 @@
-<% if false %>
+<% if true %>
   <h1>Details on <%= @list.name %></h1>
     <div class="row mb-3">
       <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
   </div>
   <% end %>
+
+<%= render "reviews/new", { list: @list, review: @review }  %>
 
   <div class="row gx-5 gy-5">
     <% @list.bookmarks.each_with_index do |bookmark, index| %>
