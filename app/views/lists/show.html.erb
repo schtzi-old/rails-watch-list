@@ -1,9 +1,11 @@
-<h1>Details on <%= @list.name %></h1>
-  <div class="row mb-3">
-    <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
-</div>
+<% if false %>
+  <h1>Details on <%= @list.name %></h1>
+    <div class="row mb-3">
+      <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
+  </div>
+  <% end %>
 
-  <div class="d-grid gap-3">
+  <div class="row gx-5 gy-5">
     <% @list.bookmarks.each_with_index do |bookmark, index| %>
       <%= render 'components/card/card-movie', {bookmark: bookmark, index: index} %>
     <% end %>
