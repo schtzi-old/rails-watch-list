@@ -1,14 +1,14 @@
 // Import your components CSS files here.
 @import "alert";
-@import "avatar";
-@import 'banner';
-@import "button";
-@import 'card/card-container';
-@import 'card/card-category';
-@import 'card/card-movie';
+@import "banner";
+@import "card-list";
+@import "card-movie";
 @import "form_legend_clear";
-@import "navbar";
+@import "form-list";
+@import "list-details/image_header";
+@import "list-details/container_content";
+@import "list-details/review";
 
-a {
+body {
   text-decoration: none;
 }

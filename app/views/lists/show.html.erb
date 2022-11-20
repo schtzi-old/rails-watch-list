@@ -1,14 +1,25 @@
-<% if true %>
-  <h1>Details on <%= @list.name %></h1>
-    <div class="row mb-3">
-      <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
-  </div>
-  <% end %>
+<%= render 'components/list-details/list-header', {list: @list} %>
+<div class="container mt-5">
+  <div class="d-flex">
+    <div id="movies" class="col-8 flex-grow-1">
+      <% @list.bookmarks.each do |bookmark| %>
+          <%= render 'components/card/card-movie', {bookmark: bookmark} %>
+      <% end %>
+    </div>
+    <div id="reviews" class="col-4 form-list">
+      <h2>Create a new review</h2>
+      <%= render "reviews/new", { list: @list, review: @review}  %>
 
-<%= render "reviews/new", { list: @list, review: @review }  %>
-
-  <div class="row gx-5 gy-5">
-    <% @list.bookmarks.each_with_index do |bookmark, index| %>
-      <%= render 'components/card/card-movie', {bookmark: bookmark, index: index} %>
-    <% end %>
+      <h2 class="reviews-existing">Existing reviews</h2>
+      <% @list.reviews.each do |review| %>
+        <div class="review">
+          <div class="d-flex">
+            <% review.rating.times { %><i class="fa-solid fa-star"></i> <% } %>
+            <% (5 - review.rating).times { %> <i class="fa-regular fa-star"></i> <% } %>
+          </div>
+          <h3><%= review.content %></h3>
+        </div>
+      <% end %>
+    </div>
   </div>
+</div>

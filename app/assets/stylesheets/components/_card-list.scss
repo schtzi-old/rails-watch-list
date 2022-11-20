@@ -1,4 +1,12 @@
-.card-category {
+.list-grid {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 12px;
+}
+
+.card-list {
+  min-width:100px;
   background-size: cover;
   background-position: center;
   height: 180px;
@@ -11,8 +19,4 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-category a {
-  text-decoration: none;
 }

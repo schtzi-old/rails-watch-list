@@ -1,0 +1,22 @@
+<div class="image-header"
+    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.file.key, crop: :scale %>)">
+  <div class="container pt-5">
+    <h2 class="text-white"><%= list.name %></h2>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal">
+    Add a movie!
+    </button>
+  </div>
+  <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="movieModalLabel">Add a new movie to the list</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render "bookmarks/new", { list: @list, bookmark: @bookmark }  %>
+        </div>
+    </div>
+  </div>
+</div>

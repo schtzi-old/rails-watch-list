@@ -3,11 +3,12 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @list = List.find(params['list_id'])
     @review.list = @list
+    @bookmark = Bookmark.new
 
     if @review.save
       redirect_to list_path(@list)
     else
-      render list_path, status: :unprocessable_entity
+      render 'lists/show', status: :unprocessable_entity
     end
   end
 

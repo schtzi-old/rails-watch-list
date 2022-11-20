@@ -14,8 +14,9 @@ puts 'Cleaning database...'
 List.destroy_all
 Bookmark.destroy_all
 Movie.destroy_all
+Review.destroy_all
 
-puts 'Creates movies...'
+puts 'Creating movies...'
 response = URI.open('https://tmdb.lewagon.com/movie/top_rated').read
 result = JSON.parse(response)
 
